@@ -5,8 +5,8 @@ const express = require('express')
 require('dotenv').config()
 const massive = require('massive')
 const { json } = require('body-parser')
-const app = express()
 const controller = require('./controller')
+const app = express()
 
 
 // // // // // MIDDLEWARE // // // // //
@@ -19,7 +19,7 @@ massive(process.env.CONNECTION_STRING)
 
 // // // // // ENDPOINTS // // // // // 
 
-app.get(`/api`, controller.get)
+app.get(`/api/houses`, controller.get)
 app.post(`/api`, controller.create)
 app.put(`/api`, controller.update)
 app.delete(`/api`, controller.delete)
