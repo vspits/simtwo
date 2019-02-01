@@ -9,7 +9,7 @@ const House = props => {
             <p>City: {props.city}</p>
             <p>State: {props.state}</p>
             <p>Zip: {props.zip}</p>
-            <button>Delete</button>
+            <button onClick={() => props.deleteHouse(`${props.house_id}`)}>Delete</button>
         </div>
     )
 }

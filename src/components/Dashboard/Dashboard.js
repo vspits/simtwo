@@ -31,10 +31,10 @@ class Dashboard extends Component {
 
     deleteHouse(house_id){
         axios.delete(`/api/house/${house_id}`)
-            .then(res => {
-                this.props.getHouses()
-            })
+        .then((res) => {
+            this.getHouses()
             this.setState({listOfHouses: res.data})
+        })
     }
 
     render(){
@@ -50,6 +50,7 @@ class Dashboard extends Component {
                     city={house.city}
                     state={house.state}
                     zip={house.zip}
+                    deleteHouse={this.deleteHouse}
                 /> 
             )
         })
