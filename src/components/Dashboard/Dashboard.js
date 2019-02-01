@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import House from '../House/House';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 class Dashboard extends Component {
@@ -16,12 +16,25 @@ class Dashboard extends Component {
         this.getHouses()
     }
 
+// // // GET HOUSE FUNCTION // // //
+
     getHouses(){
         axios.get(`/api/houses`)
         .then(res => {
             console.log(res.data)
             this.setState({listOfHouses: res.data})
         })
+    }
+
+
+// // // DELETE HOUSE FUNCTION // // //
+
+    deleteHouse(house_id){
+        axios.delete(`/api/house/${house_id}`)
+            .then(res => {
+                this.props.getHouses()
+            })
+            this.setState({listOfHouses: res.data})
     }
 
     render(){

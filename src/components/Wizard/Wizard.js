@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios';
 
 class Wizard extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             property_name: '',
             address: '',
@@ -15,6 +16,29 @@ class Wizard extends Component {
 
     handleChange(field, value){
         this.setState({[`${field}`]: value})
+    }
+
+    createHouse(){
+
+        const bodyObj = {
+            property_name: this.state.property_name,
+            address: this.state.address,
+            city: this.state.city,
+            state: this.state.state,
+            zip: this.state.zip
+        }
+
+        axios.post(`/api/house`, bodyObj)
+            .then(res => {
+                this.props.getHouses()
+            })
+            this.setState({
+                property_name: '',
+                address: '',
+                city: '',
+                state: '',
+                zip: ''
+            })
     }
 
     render(){
@@ -37,6 +61,8 @@ class Wizard extends Component {
 
                 <h3>Zip</h3>
                 <input value={this.state.zip} onChange={(e) => this.handleChange('zip', e.target.value)} type='text' />
+
+                <button onClick={() => this.createHouse()}>Complete</button>
 
             </div>
         )

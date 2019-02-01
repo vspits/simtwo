@@ -19,10 +19,10 @@ massive(process.env.CONNECTION_STRING)
 
 // // // // // ENDPOINTS // // // // // 
 
-app.get(`/api/houses`, controller.get)
-app.post(`/api`, controller.create)
+app.get(`/api/houses`, controller.getHouses)
+app.post(`/api/house`, controller.createHouse)
+app.delete(`/api/house/:house_id`, controller.deleteHouse)
 app.put(`/api`, controller.update)
-app.delete(`/api`, controller.delete)
 
 
 // // // // // SERVER MAGIC // // // // //
