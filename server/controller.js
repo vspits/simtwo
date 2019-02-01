@@ -18,19 +18,19 @@ module.exports = {
     },
     deleteHouse: (req, res, next) => {
         const dbInstance = req.app.get('db')
-        const {house_id} = req.params
-        dbInstance.delete_house([house_id])
+        const { id } = req.params
+        dbInstance.delete_house([id])
         .then(deletedHouse => res.sendStatus(200))
         .catch(err => {
             res.status(500).send({errorMessage:'Try again, not werkin'})
         })
     },
-    update: (req, res, next) => {
+    // update: (req, res, next) => {
        
         // dbInstance.update_()
         // .then(updated => res.status(200).send(updated))
         // .catch(err => {
         //     res.status(500).send({errorMessage:'Try again, not werkin'})
         // })
-    }
+    // }
 }

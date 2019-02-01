@@ -21,8 +21,8 @@ massive(process.env.CONNECTION_STRING)
 
 app.get(`/api/houses`, controller.getHouses)
 app.post(`/api/house`, controller.createHouse)
-app.delete(`/api/house/:house_id`, controller.deleteHouse)
-app.put(`/api`, controller.update)
+app.delete(`/api/house/:id`, controller.deleteHouse)
+// app.put(`/api`, controller.update)
 
 
 // // // // // SERVER MAGIC // // // // //

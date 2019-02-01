@@ -29,9 +29,9 @@ class Dashboard extends Component {
 
 // // // DELETE HOUSE FUNCTION // // //
 
-    deleteHouse(house_id){
-        axios.delete(`/api/house/${house_id}`)
-        .then((res) => {
+    deleteHouse(id){
+        axios.delete(`/api/house/${id}`)
+        .then(res => {
             this.getHouses()
             this.setState({listOfHouses: res.data})
         })
@@ -45,6 +45,7 @@ class Dashboard extends Component {
             return ( 
                 <House 
                     key={house.house_id}
+                    house_id={house.house_id}
                     property_name={house.property_name}
                     address={house.address}
                     city={house.city}
