@@ -8,7 +8,7 @@ import StepThree from './StepThree/StepThree'
 class Wizard extends Component {
     render(){
         return(
-            <div>
+            <div className='wizard'>
                 Wizard
                 <Link to='/'><button>Cancel</button></Link>
                 <Route path='/wizard/stepone' component={StepOne}/>
