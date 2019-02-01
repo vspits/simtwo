@@ -28,7 +28,10 @@ class StepThree extends Component {
                 address: '',
                 city: '',
                 state: '',
-                zip: ''
+                zip: '',
+                image_url: '',
+                monthly_mortgage: '',
+                desired_rent: ''
             })
     }
     
@@ -55,6 +58,12 @@ class StepThree extends Component {
 
 const mapStateToProps = (reduxState) => {
     return {
+        property_name: reduxState.property_name,
+        address: reduxState.address,
+        city: reduxState.city,
+        state: reduxState.state,
+        zip: reduxState.zip,
+        image_url: reduxState.image_url,
         monthly_mortgage: reduxState.monthly_mortgage,
         desired_rent: reduxState.desired_rent
     }

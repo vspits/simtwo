@@ -4,6 +4,10 @@ import { connect } from 'react-redux'
 import {updatePropertyName, updateAddress, updateCity, updateState, updateZip} from '../../../ducks/reducer'
 
 class StepOne extends Component {
+    componentDidMount(){
+        
+    }
+
     render(){
         const {updatePropertyName, updateAddress, updateCity, updateState, updateZip} = this.props
         return(

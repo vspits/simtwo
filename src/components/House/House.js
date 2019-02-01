@@ -1,8 +1,9 @@
 import React from 'react'
+import './house.css'
 
 const House = props => {
     return (
-        <div style={{border: '1px solid black', height: '250px', width: '400px'}}>
+        <div className='houseComponent' style={{}}>
 
             <p>Property Name: {props.property_name}</p>
             <p>Address: {props.address}</p>
